@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUIForm">
+  <grid id="27dc6" binding="rootPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="8" width="1404" height="412"/>
+    </constraints>
+    <properties>
+      <autoscrolls value="false"/>
+      <doubleBuffered value="true"/>
+      <enabled value="true"/>
+      <focusCycleRoot value="false"/>
+      <focusTraversalPolicyProvider value="false"/>
+      <focusable value="true"/>
+      <inheritsPopupMenu value="false"/>
+      <minimumSize width="500" height="100"/>
+      <opaque value="true"/>
+      <preferredSize width="500" height="500"/>
+      <requestFocusEnabled value="true"/>
+      <verifyInputWhenFocusTarget value="true"/>
+      <visible value="true"/>
+    </properties>
+    <clientProperties>
+      <html.disable class="java.lang.Boolean" value="false"/>
+    </clientProperties>
+    <border type="none"/>
+    <children>
+      <grid id="baba0" binding="mainPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <doubleBuffered value="true"/>
+          <enabled value="true"/>
+          <focusable value="true"/>
+          <font/>
+          <inheritsPopupMenu value="false"/>
+          <minimumSize width="500" height="68"/>
+          <opaque value="true"/>
+          <preferredSize width="850" height="850"/>
+          <requestFocusEnabled value="true"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="52f62" class="javax.swing.JTextField" binding="inputFileTextField">
+            <constraints/>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <minimumSize width="100" height="38"/>
+              <preferredSize width="400" height="40"/>
+            </properties>
+          </component>
+          <component id="16ca4" class="javax.swing.JButton" binding="inputFileButton">
+            <constraints/>
+            <properties>
+              <preferredSize width="240" height="40"/>
+              <text value="Выберите папку с изображениями"/>
+            </properties>
+          </component>
+          <component id="1acb4" class="javax.swing.JTextField" binding="outputFileTextField">
+            <constraints/>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <font/>
+              <preferredSize width="400" height="40"/>
+            </properties>
+          </component>
+          <component id="cde" class="javax.swing.JButton" binding="outputFileButton">
+            <constraints/>
+            <properties>
+              <label value="Выберите папку для результатов"/>
+              <preferredSize width="240" height="40"/>
+              <text value="Выберите папку для результатов"/>
+            </properties>
+          </component>
+          <component id="7e380" class="javax.swing.JLabel" binding="titleOne">
+            <constraints/>
+            <properties>
+              <font size="24"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <iconTextGap value="10"/>
+              <preferredSize width="850" height="80"/>
+              <text value="Изменение фото"/>
+            </properties>
+          </component>
+          <component id="5bc61" class="javax.swing.JLabel" binding="changeFormat">
+            <constraints/>
+            <properties>
+              <font size="18"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <iconTextGap value="10"/>
+              <preferredSize width="850" height="30"/>
+              <text value="Изменить формат"/>
+            </properties>
+          </component>
+          <component id="2ab28" class="javax.swing.JCheckBox" binding="formatJpg">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="2"/>
+              <horizontalTextPosition value="11"/>
+              <preferredSize width="160" height="23"/>
+              <text value="jpg"/>
+            </properties>
+          </component>
+          <component id="56fc0" class="javax.swing.JCheckBox" binding="formatPng">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="2"/>
+              <horizontalTextPosition value="11"/>
+              <preferredSize width="160" height="23"/>
+              <text value="png"/>
+            </properties>
+          </component>
+          <component id="801be" class="javax.swing.JCheckBox" binding="formatWebp">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+              <horizontalAlignment value="2"/>
+              <horizontalTextPosition value="11"/>
+              <preferredSize width="160" height="23"/>
+              <text value="Webp"/>
+            </properties>
+          </component>
+          <component id="cdc47" class="javax.swing.JLabel" binding="ChangeSizq">
+            <constraints/>
+            <properties>
+              <font size="18"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <iconTextGap value="10"/>
+              <preferredSize width="850" height="35"/>
+              <text value="Изменить размер"/>
+            </properties>
+          </component>
+          <component id="62150" class="javax.swing.JTextField" binding="heightInPixels">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="2"/>
+              <preferredSize width="70" height="38"/>
+            </properties>
+          </component>
+          <component id="d14da" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="200" height="18"/>
+              <text value="Высота, в пикселях"/>
+            </properties>
+          </component>
+          <component id="db24" class="javax.swing.JTextField" binding="compressionRateField">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="2"/>
+              <preferredSize width="70" height="38"/>
+            </properties>
+          </component>
+          <component id="cbe5f" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="150" height="18"/>
+              <text value="Процент сжатия"/>
+            </properties>
+          </component>
+          <component id="12a34" class="javax.swing.JTextField" binding="widthInPixels">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="2"/>
+              <preferredSize width="70" height="38"/>
+            </properties>
+          </component>
+          <component id="1a13b" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="200" height="18"/>
+              <text value="Ширина, в пикселях"/>
+            </properties>
+          </component>
+          <component id="c5f6c" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="150" height="18"/>
+              <text value=""/>
+              <visible value="true"/>
+            </properties>
+          </component>
+          <component id="6815c" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="70" height="38"/>
+              <text value=""/>
+              <visible value="true"/>
+            </properties>
+          </component>
+          <component id="2835f" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <preferredSize width="800" height="25"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="151c" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <font size="24"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <iconTextGap value="10"/>
+              <preferredSize width="850" height="28"/>
+              <text value="Переименовать фото по дате создания"/>
+            </properties>
+          </component>
+          <component id="34bb7" class="javax.swing.JCheckBox" binding="sortFotos">
+            <constraints/>
+            <properties>
+              <font size="14"/>
+              <horizontalAlignment value="0"/>
+              <preferredSize width="800" height="30"/>
+              <text value="Сортировка фото"/>
+            </properties>
+          </component>
+          <component id="8f4bc" class="javax.swing.JButton" binding="startButton">
+            <constraints/>
+            <properties>
+              <font size="20"/>
+              <preferredSize width="200" height="38"/>
+              <text value="Start"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
