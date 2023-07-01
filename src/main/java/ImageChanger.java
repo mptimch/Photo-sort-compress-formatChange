@@ -47,20 +47,8 @@ public class ImageChanger {
         String pathOfNewFile = ""; // for logger
         try {
             image = ImageIO.read(file);
+            image = changeImage(image);
 
-            // changing image
-            if (width > 0 && height > 0) {
-                image = Scalr.resize(image, width, height);
-            }
-
-            if (compressionRate > 0) {
-                height = image.getHeight();
-                width = image.getWidth();
-                double buffer = (double) compressionRate / 100;
-                int newWidth = width - (int) (width * buffer);
-                int newHeight = height - (int) (height * buffer);
-                image = Scalr.resize(image, newWidth, newHeight);
-            }
 
             // saving image
             if (changeFormat) {
@@ -115,5 +103,21 @@ public class ImageChanger {
     private String getFileName(String fileNameWithFiletype) {
         int dotIndex = fileNameWithFiletype.lastIndexOf(".");
         return fileNameWithFiletype.substring(0, dotIndex);
+    }
+
+    private BufferedImage changeImage(BufferedImage image) {
+        if (width > 0 && height > 0) {
+            image = Scalr.resize(image, width, height);
+        }
+
+        if (compressionRate > 0) {
+            height = image.getHeight();
+            width = image.getWidth();
+            double buffer = (double) compressionRate / 100;
+            int newWidth = width - (int) (width * buffer);
+            int newHeight = height - (int) (height * buffer);
+            image = Scalr.resize(image, newWidth, newHeight);
+        }
+        return image;
     }
 }
