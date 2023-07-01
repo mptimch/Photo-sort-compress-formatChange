@@ -131,7 +131,7 @@ public class GUIForm {
                     return;
                 }
                 dstFolder = selectedFile.getPath();
-                outputFileTextField.setText(srcFolder);
+                outputFileTextField.setText(dstFolder);
 
             }
         });
@@ -486,7 +486,7 @@ public class GUIForm {
                     isEnd = renameByCreationDate.rename();
                 } else {
 
-                    ImageChanger imageChanger = new ImageChanger(files, compressionRate, width, height, dstFormat, dstFolder, false);
+                    ImageChanger imageChanger = new ImageChanger(files, compressionRate, width, height, dstFormat, dstFolder, changeFormatBoolean);
                     isEnd = imageChanger.handlePictures();
                 }
 

@@ -30,12 +30,12 @@ public class Main {
 
         boolean changeFormat = false;
         if (!properties.getProperty("change_format").equals("null")) {
-        switch (properties.getProperty("change_format")) {
-            case "jpg" -> dstFormat = ConvertToThisFormats.jpg;
-            case "png" -> dstFormat = ConvertToThisFormats.png;
-            case "webp" -> dstFormat = ConvertToThisFormats.webp;
-        }
-        changeFormat = true;
+            switch (properties.getProperty("change_format")) {
+                case "jpg" -> dstFormat = ConvertToThisFormats.jpg;
+                case "png" -> dstFormat = ConvertToThisFormats.png;
+                case "webp" -> dstFormat = ConvertToThisFormats.webp;
+            }
+            changeFormat = true;
         }
 
         int height = Integer.parseInt(properties.getProperty("change_size_by_pizels_height"));
@@ -62,18 +62,18 @@ public class Main {
     }
 
 
-         public static ArrayList<File> listFiles (ArrayList < File > src) {
-            ArrayList files = new ArrayList();
-            for (File file : src) {
-                if (!file.isDirectory()) {
-                    files.add(file);
-                } else {
-                    ArrayList<File> insideFiles = new ArrayList<>(Arrays.asList(file.listFiles()));
-                    files.addAll(listFiles(insideFiles));
-                }
+    public static ArrayList<File> listFiles(ArrayList<File> src) {
+        ArrayList files = new ArrayList();
+        for (File file : src) {
+            if (!file.isDirectory()) {
+                files.add(file);
+            } else {
+                ArrayList<File> insideFiles = new ArrayList<>(Arrays.asList(file.listFiles()));
+                files.addAll(listFiles(insideFiles));
             }
-            return files;
         }
-
-
+        return files;
     }
+
+
+}
