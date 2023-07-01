@@ -63,7 +63,7 @@ public class Main {
 
 
     public static ArrayList<File> listFiles(ArrayList<File> src) {
-        ArrayList files = new ArrayList();
+        ArrayList <File> files = new ArrayList<>();
         for (File file : src) {
             if (!file.isDirectory()) {
                 files.add(file);
