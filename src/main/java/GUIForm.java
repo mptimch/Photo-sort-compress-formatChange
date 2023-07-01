@@ -131,7 +131,7 @@ public class GUIForm {
                     return;
                 }
                 dstFolder = selectedFile.getPath();
-                outputFileTextField.setText(srcFolder);
+                outputFileTextField.setText(dstFolder);
 
             }
         });
@@ -225,7 +225,7 @@ public class GUIForm {
                     changeFormatBoolean = true;
                 } else {
                     sortFotos.setEnabled(true);
-                    formatPng.setEnabled(true);
+                    formatJpg.setEnabled(true);
                     formatWebp.setEnabled(true);
                     changeFormatBoolean = false;
                 }
@@ -485,8 +485,7 @@ public class GUIForm {
                     RenameByCreationDate renameByCreationDate = new RenameByCreationDate(files, dstFolder);
                     isEnd = renameByCreationDate.rename();
                 } else {
-
-                    ImageChanger imageChanger = new ImageChanger(files, compressionRate, width, height, dstFormat, dstFolder, false);
+                    ImageChanger imageChanger = new ImageChanger(files, compressionRate, width, height, dstFormat, dstFolder, changeFormatBoolean);
                     isEnd = imageChanger.handlePictures();
                 }
 
