@@ -25,8 +25,13 @@ public class Main {
         fileInputStream.close();
 
 
+        // Getting data from application.properties
         String srcFolder = properties.getProperty("input_path");
         String dstFolder = properties.getProperty("output_path");
+        int height = Integer.parseInt(properties.getProperty("change_size_by_pizels_height"));
+        int width = Integer.parseInt(properties.getProperty("change_size_by_pizels_width"));
+        Integer compressionRate = Integer.parseInt(properties.getProperty("change_size_in_percents"));
+        boolean renamePhotos = Boolean.valueOf(properties.getProperty("rename_photo_video_by_creation_date"));
 
         boolean changeFormat = false;
         if (!properties.getProperty("change_format").equals("null")) {
@@ -38,19 +43,18 @@ public class Main {
             changeFormat = true;
         }
 
-        int height = Integer.parseInt(properties.getProperty("change_size_by_pizels_height"));
-        int width = Integer.parseInt(properties.getProperty("change_size_by_pizels_width"));
-
-        Integer compressionRate = Integer.parseInt(properties.getProperty("change_size_in_percents"));
-
-        boolean renamePhotos = Boolean.valueOf(properties.getProperty("rename_photo_video_by_creation_date"));
-
 
         //Create a list of files. Collect files from all subfolders using a recursive function
         File srcDir = new File(srcFolder);
         File[] filesArray = srcDir.listFiles();
-        ArrayList<File> files = listFiles(new ArrayList<>(Arrays.asList(filesArray)));
+        ArrayList<File> files = new ArrayList<>();
+        try {
+            files = listFiles(new ArrayList<>(Arrays.asList(filesArray)));
+        } catch (Exception e) {
+            logger.fatal("Неверно указан путь к папке или файлу с входящими данными: " + srcFolder);
+        }
 
+        // working with photo files
         if (renamePhotos) {
             RenameByCreationDate renameByCreationDate = new RenameByCreationDate(files, dstFolder);
             renameByCreationDate.rename();
@@ -61,7 +65,7 @@ public class Main {
         }
     }
 
-
+    // recursive function to create ArrayList with files
     public static ArrayList<File> listFiles(ArrayList<File> src) {
         ArrayList <File> files = new ArrayList<>();
         for (File file : src) {
@@ -74,6 +78,4 @@ public class Main {
         }
         return files;
     }
-
-
 }
