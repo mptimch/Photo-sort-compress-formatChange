@@ -477,8 +477,13 @@ public class GUIForm {
 
 
                 File srcDir = new File(srcFolder);
-                File[] filesArray = srcDir.listFiles();
-                ArrayList<File> files = Main.listFiles(new ArrayList<>(Arrays.asList(filesArray)));
+                ArrayList<File> files = new ArrayList<>();
+                if (!srcDir.isDirectory()) {
+                    files = new ArrayList<>(Arrays.asList(srcDir));
+                } else {
+                    File[] filesArray = srcDir.listFiles();
+                    files = Main.listFiles(new ArrayList<>(Arrays.asList(filesArray)));
+                }
 
                 boolean isEnd = false;
                 if (changeImages) {
